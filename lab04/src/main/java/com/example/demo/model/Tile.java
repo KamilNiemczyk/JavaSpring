@@ -1,14 +1,26 @@
 package com.example.demo.model;
 
+import javax.validation.constraints.*;
+import java.util.Date;
 
 public class Tile {
+    @NotBlank(message = "ID must not be blank")
     private final String id;
+    @NotBlank(message = "Name must not be blank")
     private String name;
+    @Min(value= 0, message = "Height must be greater than 0")
     private int height;
+    @Min(value= 0, message = "Width must be greater than 0")
     private int width;
+    @Min(value= 0, message = "Price must be greater than 0")
     private int price;
+    @NotBlank(message = "Material must not be blank")
     private String material;
+    @Pattern(regexp = "^[A-Z]", message = "Production location must start with an uppercase letter")
     private String productionLocation;
+    private boolean isAvailable;
+    @PastOrPresent(message = "Date of production must be in the past or present")
+    private Date dateOfProduction;
 
     public Tile(String id, String name, int height, int width, int price, String material, String productionLocation) {
         this.id = id;
@@ -18,6 +30,8 @@ public class Tile {
         this.price = price;
         this.material = material;
         this.productionLocation = productionLocation;
+        this.isAvailable = true;
+        this.dateOfProduction = new Date();
     }
 
     public String getId() {
@@ -70,6 +84,18 @@ public class Tile {
 
     public String getProductionLocation() {
         return productionLocation;
+    }
+
+    public Date getDateOfProduction() {
+        return dateOfProduction;
+    }
+
+    public boolean getIsAvailable() {
+        return isAvailable;
+    }
+
+    public void setIsAvailable(boolean isAvailable) {
+        this.isAvailable = isAvailable;
     }
 
 
