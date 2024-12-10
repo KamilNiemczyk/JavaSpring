@@ -1,0 +1,37 @@
+
+# Tile API
+
+#Get all tiles
+localhost:8080/api/tiles
+
+#Get a tile by id
+localhost:8080/api/tiles/3312
+
+#Post a new tile
+localhost:8080/api/tiles
+    {
+        "id": "c5f8eae4-1ad8-4d72-9d32-76df3e0d2b47",
+        "name": "Classic White Tile",
+        "height": 15,
+        "width": 15,
+        "price": 1,
+        "material": "Ceramic",
+        "productionLocation": "Poland"
+    }
+#Update a tile
+localhost:8080/api/tiles/3312
+    {
+        "id": "c5f8eae4-1ad8-4d72-9d32-76df3e0d2b47",
+        "name": "Classic White Tile",
+        "height": 115,
+        "width": 115,
+        "price": 2,
+        "material": "Ceramic",
+        "productionLocation": "Poland"
+    }
+
+#Delete a tile
+localhost:8080/api/tiles/3312
+
+localhost:8080/api/tiles/3312
+```
